@@ -1,0 +1,41 @@
+﻿<Window x:Class="Älytalo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Älytalo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1000">
+    <Grid RenderTransformOrigin="0.24,0.376">
+        <Slider x:Name="SlidKeittio" HorizontalAlignment="Left" Height="30" Margin="135,209,0,0" VerticalAlignment="Top" Width="213" Maximum="100" BindingGroup="{Binding Fill.Color.A.MaxValue, ElementName=RectLivingroom}" ValueChanged="SliderLights_ValueChanged" Cursor="AppStarting" IsSelectionRangeEnabled="True" SelectionEnd="100" IsMoveToPointEnabled="True"/>
+        <Border x:Name="BordKeittio" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="127" Margin="687,131,0,0" VerticalAlignment="Top" Width="187">
+            <Border.Background>
+                <SolidColorBrush Color="Gold" Opacity="0"/>
+            </Border.Background>
+            <Label x:Name="LbKeittio" Content="Keittiö" HorizontalAlignment="Center" Height="41" Margin="0,45,0,0" VerticalAlignment="Top" Width="62"/>
+        </Border>
+        <Border x:Name="BordOlohuone" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="158" Margin="500,258,0,0" VerticalAlignment="Top" Width="374">
+            <Border.Background>
+                <SolidColorBrush Color="Gold" Opacity="0"/>
+            </Border.Background>
+            <Label x:Name="LbOlohuone" Content="Olohuone" HorizontalAlignment="Left" Height="28" VerticalAlignment="Center" Width="114" Margin="147,0,0,0"/>
+        </Border>
+        <Border x:Name="BordSauna" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="85" Margin="874,331,0,0" VerticalAlignment="Top" Width="94">
+            <Border.Background>
+                <SolidColorBrush Color="Gold" Opacity="0"/>
+            </Border.Background>
+        </Border>
+        <Label x:Name="LbSauna" Content="Sauna" HorizontalAlignment="Left" Height="28" Margin="900,359,0,0" VerticalAlignment="Top" Width="54"/>
+        <Slider x:Name="SlidOlohuone" HorizontalAlignment="Left" Height="30" Margin="135,301,0,0" VerticalAlignment="Top" Width="213" Maximum="100" BindingGroup="{Binding Fill.Color.A.MaxValue, ElementName=RectLivingroom}" ValueChanged="SliderLights_ValueChanged" IsMoveToPointEnabled="True" IsSelectionRangeEnabled="True" SelectionEnd="102"/>
+        <Slider x:Name="SlidSauna" HorizontalAlignment="Left" Height="30" Margin="135,390,0,0" VerticalAlignment="Top" Width="213" Maximum="100" BindingGroup="{Binding Fill.Color.A.MaxValue, ElementName=RectLivingroom}" ValueChanged="SliderLights_ValueChanged" SelectionEnd="100" IsMoveToPointEnabled="True" IsSelectionRangeEnabled="True"/>
+        <TextBox x:Name="TxtKeittioVal" HorizontalAlignment="Left" Height="30" Margin="367,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" LostFocus="TxtLights_LostFocus"/>
+        <TextBox x:Name="TxtOlohuoneVal" HorizontalAlignment="Left" Height="30" Margin="367,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" LostFocus="TxtLights_LostFocus"/>
+        <TextBox x:Name="TxtSaunaVal" HorizontalAlignment="Left" Height="30" Margin="367,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" LostFocus="TxtLights_LostFocus"/>
+        <Button x:Name="BtnKeittioVal" Content="Off" HorizontalAlignment="Left" Height="30" Margin="70,204,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.738,0.635" Click="BtnLights_Click"/>
+        <Button x:Name="BtnOlohuoneVal" Content="Off" HorizontalAlignment="Left" Height="30" Margin="70,296,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.596,0.608" Click="BtnLights_Click"/>
+        <Button x:Name="BtnSaunaVal" Content="Off" HorizontalAlignment="Left" Height="30" Margin="70,386,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.596,0.608" Click="BtnLights_Click"/>
+        <Label x:Name="LbKeittioSlid" Content="Keittiö" HorizontalAlignment="Left" Height="26" Margin="216,168,0,0" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.515,0.409"/>
+        <Label x:Name="LbOlohuoneSlid" Content="Olohuone" HorizontalAlignment="Left" Height="26" Margin="216,258,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.515,0.409"/>
+        <Label x:Name="LbSaunaSlid" Content="Sauna" HorizontalAlignment="Left" Height="26" Margin="216,356,0,0" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.762,0.248"/>
+    </Grid>
+</Window>
