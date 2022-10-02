@@ -37,5 +37,6 @@
         <Label x:Name="LbKeittioSlid" Content="Keittiö" HorizontalAlignment="Left" Height="26" Margin="216,168,0,0" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.515,0.409"/>
         <Label x:Name="LbOlohuoneSlid" Content="Olohuone" HorizontalAlignment="Left" Height="26" Margin="216,258,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.515,0.409"/>
         <Label x:Name="LbSaunaSlid" Content="Sauna" HorizontalAlignment="Left" Height="26" Margin="216,356,0,0" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.762,0.248"/>
+        <Label x:Name="LbValojensaato" Content="Valojen Säätö" HorizontalAlignment="Left" Height="38" Margin="169,117,0,0" VerticalAlignment="Top" Width="205" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.629,0.527"/>
     </Grid>
 </Window>

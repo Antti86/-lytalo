@@ -27,6 +27,12 @@ namespace Älytalo
         public MainWindow()
         {
             InitializeComponent();
+            TxtKeittioVal.Text = "0 %";
+            TxtOlohuoneVal.Text = "0 %";
+            TxtSaunaVal.Text = "0 %";
+            BtnKeittioVal.Background = Brushes.Red;
+            BtnOlohuoneVal.Background = Brushes.Red;
+            BtnSaunaVal.Background = Brushes.Red;
         }
         private void SliderLights_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
             //Hoitaa kaikista slidereista lähtevät muutokset
