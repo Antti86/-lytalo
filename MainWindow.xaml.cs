@@ -20,96 +20,23 @@ namespace Älytalo
     /// </summary>
     public partial class MainWindow : Window
     {
-        Lights keittioL = new();
-        Lights olohuoneL = new();
-        Lights saunaL = new();
-
+        Valot valo = new();
+        Lämpö lampo = new();
         public MainWindow()
         {
             InitializeComponent();
-            TxtKeittioVal.Text = "0 %";
-            TxtOlohuoneVal.Text = "0 %";
-            TxtSaunaVal.Text = "0 %";
-            BtnKeittioVal.Background = Brushes.Red;
-            BtnOlohuoneVal.Background = Brushes.Red;
-            BtnSaunaVal.Background = Brushes.Red;
+            Page.NavigationService.Navigate(valo);
+            LbAsteetMain.Content = "20°C";
         }
-        private void SliderLights_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-            //Hoitaa kaikista slidereista lähtevät muutokset
+        private void BtnLammitysNav_Click(object sender, RoutedEventArgs e)
         {
-            if (sender == SlidKeittio)
-            {
-                keittioL.Adjust(SlidKeittio.Value.ToString(),SlidKeittio, BordKeittio, BtnKeittioVal,
-                    TxtKeittioVal);
-            }
-            if (sender == SlidOlohuone)
-            {
-                olohuoneL.Adjust(SlidOlohuone.Value.ToString(),SlidOlohuone, BordOlohuone,
-                    BtnOlohuoneVal, TxtOlohuoneVal);
-            }
-            if (sender == SlidSauna)
-            {
-                saunaL.Adjust(SlidSauna.Value.ToString(), SlidSauna, BordSauna, BtnSaunaVal,
-                    TxtSaunaVal);
-            }
+            Page.NavigationService.Navigate(lampo);
         }
 
-        private void BtnLights_Click(object sender, RoutedEventArgs e)
-            //Hoitaa buttoneista lähtevät muutokset
+        private void BtnValotNav_Click(object sender, RoutedEventArgs e)
         {
-            if (sender == BtnKeittioVal)
-            {
-                if (keittioL.Switced)
-                {
-                    keittioL.Adjust("0", SlidKeittio, BordKeittio, BtnKeittioVal, TxtKeittioVal);
-                }
-            }
-            if (sender == BtnOlohuoneVal)
-            {
-                if (olohuoneL.Switced)
-                {
-                    olohuoneL.Adjust("0", SlidOlohuone, BordOlohuone, BtnOlohuoneVal, TxtOlohuoneVal);
-                }
-            }
-            if (sender == BtnSaunaVal)
-            {
-                if (saunaL.Switced)
-                {
-                    saunaL.Adjust("0", SlidSauna, BordSauna, BtnSaunaVal, TxtSaunaVal);
-                }
-            }
+            Page.NavigationService.Navigate(valo);
         }
 
-        private void TxtLights_LostFocus(object sender, RoutedEventArgs e)
-            //Hoitaa tekstikenttistä lähtevät muutokset, tekstikenttiin voi manuaalisesti laittaa
-            //valaistuksen vahvuuden, päivittyy kun focus siirtyy pois tekstikentästä
-        {
-            if (sender == TxtKeittioVal)
-            {
-                LightTextSettingRoutine(keittioL, TxtKeittioVal, SlidKeittio, BordKeittio, BtnKeittioVal);
-            }
-            if (sender == TxtOlohuoneVal)
-            {
-                LightTextSettingRoutine(olohuoneL, TxtOlohuoneVal, SlidOlohuone, BordOlohuone,
-                    BtnOlohuoneVal);
-            }
-            if (sender == TxtSaunaVal)
-            {
-                LightTextSettingRoutine(saunaL, TxtSaunaVal, SlidSauna, BordSauna, BtnSaunaVal);
-            }
-        }
-        void LightTextSettingRoutine(Lights light, TextBox txt, Slider slid, Border bord, Button btn)
-            //Sisennys funktio tekstikentistä lähteviin muutoksiin
-        {
-            string temp = txt.Text.Replace('%', ' ').TrimEnd();
-            if (Checker.IsNumeric(temp, 0, 100))
-            {
-                light.Adjust(temp, slid, bord, btn, txt);
-            }
-            else
-            {
-                txt.Text = slid.Value.ToString("F0") + "%";
-            }
-        }
     }
 }

@@ -1,0 +1,22 @@
+﻿<Page x:Class="Älytalo.Lämpö"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Älytalo"
+      mc:Ignorable="d" 
+      d:DesignHeight="330
+      " d:DesignWidth="440"
+      Title="Lämpö">
+
+    <Grid x:Name="PageLampo" Background="White" Width="440" Height="330">
+        <Button x:Name="BtnAsetaLampo" Content="Aseta lämpötila" HorizontalAlignment="Left" Height="39" Margin="193,200,0,0" VerticalAlignment="Top" Width="106" Click="BtnAsetaLampo_Click"/>
+        <TextBox x:Name="TxtLampotila" HorizontalAlignment="Left" Height="28" Margin="66,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="TxtUusiLampotila" HorizontalAlignment="Left" Height="28" Margin="66,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="LbLampotila" Content="Lämpötila" HorizontalAlignment="Left" Height="27" Margin="60,89,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label x:Name="LbUusiLampotila" Content="Aseta uusi lämpötila" HorizontalAlignment="Left" Height="27" Margin="60,168,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Lämmityksen säätö" HorizontalAlignment="Left" Height="35" Margin="103,39,0,0" VerticalAlignment="Top" Width="196" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="BtnMinus" Content="-" HorizontalAlignment="Left" Height="33" Margin="66,241,0,0" VerticalAlignment="Top" Width="34" FontSize="20" Click="PlusMinus_ButtonClick"/>
+        <Button x:Name="BtnPlus" Content="+" HorizontalAlignment="Left" Height="33" Margin="112,241,0,0" VerticalAlignment="Top" Width="34" FontSize="20" Click="PlusMinus_ButtonClick"/>
+    </Grid>
+</Page>
