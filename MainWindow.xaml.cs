@@ -22,11 +22,13 @@ namespace Älytalo
     {
         Valot valo = new();
         Lämpö lampo = new();
+        Sauna sauna = new();
         public MainWindow()
         {
             InitializeComponent();
             Page.NavigationService.Navigate(valo);
             LbAsteetMain.Content = "20°C";
+            LbSaunanAsteetMain.Content = "20°C";
         }
         private void BtnLammitysNav_Click(object sender, RoutedEventArgs e)
         {
@@ -38,5 +40,9 @@ namespace Älytalo
             Page.NavigationService.Navigate(valo);
         }
 
+        private void BtnSaunaNav_Click(object sender, RoutedEventArgs e)
+        {
+            Page.NavigationService.Navigate(sauna);
+        }
     }
 }
