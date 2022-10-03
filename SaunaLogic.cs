@@ -17,6 +17,7 @@ namespace Älytalo
         public void Start(Label label)
             //Ottaa mainwindown labelistä talon lämpötilan
         {
+            
             if (label is not null)
             {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
@@ -24,7 +25,11 @@ namespace Älytalo
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 if (Checker.IsNumeric(temp))
                 {
-                    Temperature = Convert.ToInt32(temp);
+                    int old = Convert.ToInt32(temp);
+                    if (Temperature <= old)
+                    {
+                        Temperature = old;
+                    }
                 }
             }
             
