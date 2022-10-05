@@ -10,11 +10,22 @@ namespace Älytalo
 {
     public class Lights
     {
-        public bool Switced { get; private set; } = false;
+        public Lights(Slider slid_in, Button swit_in, TextBox box_in)
+        {
+            slid = slid_in;
+            swit = swit_in;
+            box = box_in;
+            Dimmer = "";
+            Switced = false;
+        }
+        private TextBox box;
+        private Slider slid;
+        private Button swit;
+        public bool Switced { get; private set; }
         //Set metodi on private ettei sitä voi vahingossa muuttaa tän luokan ulkopuolelta
-        private string Dimmer = "";
+        private string Dimmer;
         //Vahvan kapselloinnin takia vain Adjust metodi voi muuttaa Dimmerin arvoa
-        public void Adjust(string dimmer, Slider slid, Border bord, Button swit, TextBox box)
+        public void Adjust(string dimmer, Border bord)
             //Metodi muuttaa sliderin, borderin, txtboksin ja On/Off buttonin arvoa Dimmerin mukaan
         {
             Dimmer = dimmer;
